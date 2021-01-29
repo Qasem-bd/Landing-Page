@@ -51,17 +51,54 @@ colorsLi.forEach(li => {
       li.classList.add('active')
     })
 })
-
 // Switch Colors
 
-
-// Start Random change the Backgrounf
+//Start Sitching The Background Randomly
+let isSwitchable = true;
 let landingpage = document.querySelector(".Landing-page");
+let backgrounInterval;
+// switch The Background Randomly
+const randomizeBackground = (switchable) => {
+  if (switchable) {
+        backgrounInterval = setInterval(() => {
+          let randumNumber = Math.floor(Math.random() * 5);
+          landingpage.style.backgroundImage = 'url("/Images/web-design'+ randumNumber +'.jpg")'
+      },5000)
+   
+  }
+}
+randomizeBackground(isSwitchable);
 
-// setInterval(() => {
-//     let randumNumber = Math.floor(Math.random() * 5);
-    
-//     landingpage.style.backgroundImage = 'url("/Images/web-design'+ randumNumber +'.jpg")'
-// },5000)
 
-// Random Change the Background
+//Adding EventListener For The Span, That Controle The Switching 
+const b_control_el = document.querySelectorAll('.Setting-box .random-b span');
+
+b_control_el.forEach(controlEl => {
+    controlEl.addEventListener('click', (event) => {
+        
+          //   Activing The selected Button
+          controlEl.parentElement.querySelectorAll('span').forEach(element => {
+              element.classList.remove('active');
+          })
+          controlEl.classList.add('active')
+          
+          const elType = controlEl.dataset.background;
+          if (elType === 'yes') {
+            console.log(elType)
+              isSwitchable = true
+              randomizeBackground(isSwitchable)
+          }
+          else {
+              console.log(elType)
+              isSwitchable = false;
+              clearInterval(backgrounInterval);
+              // To Stop Switching by The first Image
+              landingpage.style.backgroundImage = 'url("/Images/web-design0.jpg")'
+          }
+
+    })  
+
+})
+//End Switching The Background Randomly
+
+
