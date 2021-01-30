@@ -67,7 +67,7 @@ const randomizeBackground = (switchable) => {
         backgrounInterval = setInterval(() => {
           let randumNumber = Math.floor(Math.random() * 5);
           landingpage.style.backgroundImage = 'url("/Images/web-design'+ randumNumber +'.jpg")'
-      },1000)
+      },5000)
    
   }
 }
