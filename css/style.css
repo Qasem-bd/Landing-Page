@@ -273,3 +273,45 @@ body {
   }
 }
 /* Etart About US */
+
+/* Start Skills */
+.skills {
+  background-color: #eee;
+  padding: 5px 0px;
+}
+.skills h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-bottom: 50px;
+}
+.skills .skill-box {
+  background-color: #ffff;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.skills .skill-box .skill-name {
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+}
+.skills .skill-box .skill-progress {
+  width: 100%;
+  height: 20px;
+  background-color: #f5f4f4;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .skill-box .skill-progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 75%;
+  background-color: var(--main-color);
+}
+
+/* Etart Skills */
