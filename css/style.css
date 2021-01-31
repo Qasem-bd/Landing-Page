@@ -252,9 +252,13 @@ body {
 .about-us .image-box {
   /* [flex : flex-grow | flex-shrink | flex-basis] */
   flex: 0 0 40%;
+  padding: 3px;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
 .about-us .image-box .background-box {
-  background-image: url("/Images/web-development-illustration_1.jpg");
+  background-image: url("/Images/web-design2.jpg");
   background-size: cover;
   border-radius: 3px;
   /* width: 300px;
@@ -314,5 +318,30 @@ body {
   background-color: var(--main-color);
   transition: width 3s ease-out;
 }
-
 /* Etart Skills */
+
+/* Start Gallery */
+
+.gallery {
+  padding: 50px 0px;
+}
+.gallery h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-bottom: 50px;
+}
+.gallery .images-box {
+  text-align: center;
+}
+.gallery .images-box img {
+  width: 250px;
+  height: 150px;
+  padding: 3px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Start Gallery */
