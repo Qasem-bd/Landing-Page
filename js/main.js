@@ -116,3 +116,37 @@ b_control_el.forEach(controlEl => {
 //End Switching The Background Randomly
 
 
+// Start Skills Section
+let mySkills = document.querySelector('.skills');
+window.onscroll = function () {
+
+  // Skills Offset Top
+  let skillsOffsetTop = mySkills.offsetTop;
+  // console.log (skillsOffsetTop)
+
+  // skills Height
+  let skillsOffsetHeight = mySkills.offsetHeight;
+  // console.log(skillsOffsetHeight)
+
+  // window Height 
+  let widowOffsetHeight = this.innerHeight;
+  // console.log(widowOffsetHeight)
+
+  // Scroll Offset Y
+  let scrollOffsetY = this.scrollY;
+  // console.log(scrollOffsetY)
+
+  if (scrollOffsetY > (skillsOffsetTop - widowOffsetHeight )) {
+    let progressElements = document.querySelectorAll('.skills .skill-box .skill-progress span');
+    progressElements.forEach(element => {
+      let progressValue = element.dataset.progress;
+      // console.log(progressValue);
+      element.style.width = progressValue;
+    })
+  }
+
+}
+
+// End Skills Section
+
+

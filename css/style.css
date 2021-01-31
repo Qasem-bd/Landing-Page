@@ -310,8 +310,9 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 75%;
+  width: 0;
   background-color: var(--main-color);
+  transition: width 3s ease-out;
 }
 
 /* Etart Skills */
