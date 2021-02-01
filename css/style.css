@@ -365,6 +365,25 @@ body {
   padding: 10px;
   z-index: 1010;
 }
+.popup-box h3 {
+  font-weight: bold;
+  text-align: center;
+  color: var(--main-color);
+  margin-top: 0px;
+}
+
+.popup-box span {
+  position: fixed;
+  top: -10px;
+  right: -10px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: #ffffff;
+  padding: 0px 8px 3px 8px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .popup-box img {
   max-width: 100%;

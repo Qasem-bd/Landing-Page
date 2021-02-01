@@ -153,36 +153,77 @@ window.onscroll = function () {
 let galleryImgs = document.querySelectorAll('.gallery .images-box img');
 
 galleryImgs.forEach((img) => {
-  img.addEventListener('click', (e) =>{
+      img.addEventListener('click', (e) =>{
 
-    // Create Overlay Element
-    let overlay = document.createElement('div');
+            // Create Overlay Element
+            let overlay = document.createElement('div');
 
-    // Add Class To Overlay
-    overlay.className = 'popup-overlay';
+            // Add Class To Overlay
+            overlay.className = 'popup-overlay';
 
-    // Append Overlay To The Body
-    document.body.appendChild(overlay);
+            // Append Overlay To The Body
+            document.body.appendChild(overlay);
 
-    // Create The Popup-Box
-    let popupBox = document.createElement('div')
+            // Create The Popup-Box
+            let popupBox = document.createElement('div')
 
-    // Add Class To PopupBox
-    popupBox.className = 'popup-box';
+            // Add Class To PopupBox
+            popupBox.className = 'popup-box';
 
-    // Create The Image Element 
-    let popupImg = document.createElement('img');
-      // Set Image Source
-      popupImg.src = img.src;
+            // Add Header To The Popupbox
+            if (img.alt) {
+              // Create The Header
+              let imgHeader = document.createElement('h3');
 
-    // Append The Image To The PopupBox
-    popupBox.appendChild(popupImg)
+              // Create TextNode 
+              let hText = document.createTextNode(img.alt)
 
-    // Append PopupBox To The Body
-    document.body.appendChild(popupBox)
+                // Appent The Text To The Header
+                imgHeader.appendChild(hText);
 
+              // Append The imgHeader To The popupBox
+              popupBox.appendChild(imgHeader)
+            }
+
+            // Create The Image Element 
+            let popupImg = document.createElement('img');
+              // Set Image Source
+              popupImg.src = img.src;
+
+            // Append The Image To The PopupBox
+            popupBox.appendChild(popupImg)
+
+            // Append PopupBox To The Body
+            document.body.appendChild(popupBox)
+
+            // Create The Close Spane
+            let closeSpan = document.createElement('span')
+
+            // Add Class To The Span
+            closeSpan.className = 'close-span'
+
+            // Create Text To The CloseSpan
+            let spanText = document.createTextNode("x") 
+            
+              closeSpan.appendChild(spanText);
+            
+            // Apped CloseSpan To The PopupBox
+            popupBox.appendChild(closeSpan)
+
+      })
+
+})
+
+ // Adding EventListener To The CloseSpan [Closing The PopupBox]
+ document.addEventListener ('click', function (e) {
+
+  if (e.target.className == 'close-span' ) {
+    // console.log(e.target.parentElement)
     
+    // Remove The PopupBox
+    e.target.parentElement.remove();
 
-
-  })
+    // Remove The Overlay
+    document.querySelector('.popup-overlay').remove();
+  }
 })
