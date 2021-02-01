@@ -146,7 +146,43 @@ window.onscroll = function () {
   }
 
 }
-
 // End Skills Section
 
 
+// Creat Popup with The Image
+let galleryImgs = document.querySelectorAll('.gallery .images-box img');
+
+galleryImgs.forEach((img) => {
+  img.addEventListener('click', (e) =>{
+
+    // Create Overlay Element
+    let overlay = document.createElement('div');
+
+    // Add Class To Overlay
+    overlay.className = 'popup-overlay';
+
+    // Append Overlay To The Body
+    document.body.appendChild(overlay);
+
+    // Create The Popup-Box
+    let popupBox = document.createElement('div')
+
+    // Add Class To PopupBox
+    popupBox.className = 'popup-box';
+
+    // Create The Image Element 
+    let popupImg = document.createElement('img');
+      // Set Image Source
+      popupImg.src = img.src;
+
+    // Append The Image To The PopupBox
+    popupBox.appendChild(popupImg)
+
+    // Append PopupBox To The Body
+    document.body.appendChild(popupBox)
+
+    
+
+
+  })
+})
