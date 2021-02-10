@@ -229,14 +229,31 @@ galleryImgs.forEach((img) => {
 })
 
 // Start Navigation Bullets
-const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+const scrollToSection = (elements) => {
 
-allBullets.forEach(bullet => {
-   
-    bullet.addEventListener('click', (e) => {
-      console.log(e.target.dataset.section)
-      document.querySelector(e.target.dataset.section).scrollIntoView({behavior: 'smooth'})
+      elements.forEach(element => {
+        
+            element.addEventListener('click', (e) => {
+              e.preventDefault();
+            console.log(e.target.dataset.section)
+            document.querySelector(e.target.dataset.section).scrollIntoView({behavior: 'smooth'})
+          })
     })
-})
+}
+
+const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+const allLinks = document.querySelectorAll('.Links a');
+console.log(allLinks)
+
+scrollToSection(allBullets);
+scrollToSection(allLinks)
+
+// allBullets.forEach(bullet => {
+   
+//     bullet.addEventListener('click', (e) => {
+//       console.log(e.target.dataset.section)
+//       document.querySelector(e.target.dataset.section).scrollIntoView({behavior: 'smooth'})
+//     })
+// })
 
 // End Navigation Bullets
