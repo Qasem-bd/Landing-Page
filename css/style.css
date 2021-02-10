@@ -488,5 +488,45 @@ body {
   top: 20px;
   left: -20px;
 }
-
 /* Etart Timeline */
+
+/* Start Features */
+.features {
+  padding: 80px 0px;
+}
+.features h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-top: 0px;
+}
+.features .feats-box {
+  padding: 50px;
+}
+.features .feat-box {
+  width: calc(100% / 3);
+  float: left;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.features .feat-box img {
+  width: 96px;
+}
+.features .feat-box h3 {
+  font-size: 20px;
+  margin: 15 0px 40px;
+  position: relative;
+}
+.features .feat-box h3::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.features .feat-box p {
+}
+/* End Features */
