@@ -279,16 +279,17 @@ body {
 /* Etart About US */
 
 /* Start Skills */
-.skills {
-  background-color: #eee;
-  padding: 5px 0px;
-}
-.skills h2 {
+.skils-out h2 {
   font-weight: bold;
   font-size: 30px;
   color: var(--main-color);
   margin-bottom: 50px;
 }
+.skills {
+  background-color: #eee;
+  padding: 50px;
+}
+
 .skills .skill-box {
   background-color: #ffff;
   display: flex;
@@ -391,6 +392,12 @@ body {
 /* End Gallery */
 
 /* Start Timeline */
+.timeline-out h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-bottom: 50px;
+}
 
 .timeline {
   padding: 50px 0px;
@@ -456,6 +463,7 @@ body {
   padding: 10px;
   background-color: #ffffff;
 }
+
 .timeline .timeline-content .content h3 {
   font-weight: bold;
   color: var(--main-color);
