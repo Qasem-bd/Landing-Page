@@ -235,7 +235,7 @@ const scrollToSection = (elements) => {
         
             element.addEventListener('click', (e) => {
               e.preventDefault();
-            console.log(e.target.dataset.section)
+          
             document.querySelector(e.target.dataset.section).scrollIntoView({behavior: 'smooth'})
           })
     })
@@ -243,17 +243,9 @@ const scrollToSection = (elements) => {
 
 const allBullets = document.querySelectorAll(".nav-bullets .bullet");
 const allLinks = document.querySelectorAll('.Links a');
-console.log(allLinks)
 
 scrollToSection(allBullets);
 scrollToSection(allLinks)
 
-// allBullets.forEach(bullet => {
-   
-//     bullet.addEventListener('click', (e) => {
-//       console.log(e.target.dataset.section)
-//       document.querySelector(e.target.dataset.section).scrollIntoView({behavior: 'smooth'})
-//     })
-// })
 
 // End Navigation Bullets
