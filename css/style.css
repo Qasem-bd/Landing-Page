@@ -276,7 +276,7 @@ body {
 
 /* Start About US */
 .about-out {
-  padding: 50px 0px;
+  padding-top: 50px;
 }
 .about-out h2 {
   font-weight: bold;
@@ -293,13 +293,26 @@ body {
 .about-us .info-box {
   flex-grow: 1;
   padding-right: 10px;
+  padding-top: 20px;
+}
+.about-us .info-box .title {
+  position: relative;
+}
+.about-us .info-box .title h3::before {
+  content: "";
+  width: 150px;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 35px;
+  left: 3px;
 }
 .about-us .info-box h3 {
   font-weight: bold;
   font-size: 25px;
   color: var(--main-color);
   margin-top: 0px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .about-us .info-box p {
   line-height: 1.5;
