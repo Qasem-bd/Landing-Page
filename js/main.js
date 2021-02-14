@@ -296,3 +296,11 @@ const resetButton = document.querySelector('.Setting-box .reset-options button')
         localStorage.removeItem('bullets-option');
         window.location.reload();
       }
+
+
+
+// Start Contact Section
+document.querySelector('.contact-me form  .submit').onclick = (event) => {
+  event.preventDefault()
+}
+// End Contact Section

@@ -725,5 +725,104 @@ body {
   margin-top: 0px;
   color: #666;
 }
-
 /* End Testimonials */
+
+/* Start Contact Section */
+.contact-me {
+  min-height: 300px;
+  background-image: url("../Images/contact.png");
+  background-size: cover;
+  position: relative;
+}
+.contact-me .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* z-index: 1; */
+}
+.contact-me .container {
+  position: relative;
+  z-index: 2;
+}
+.contact-me .container h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  text-align: center;
+}
+.contact-me .contact-box {
+  display: flex;
+  padding-top: 25px;
+}
+
+.contact-me .contact-box .contact-message {
+  flex-grow: 2;
+  width: calc(100% / 3 * 2);
+}
+.contact-me .contact-message form {
+  overflow: hidden;
+  padding: 5px;
+}
+
+.contact-me .contact-message form .left {
+  float: left;
+  width: 49%;
+}
+.contact-me .contact-message form .right {
+  float: right;
+  width: 49%;
+}
+.contact-me .contact-message form input:not([type="submit"]),
+.contact-me .contact-message form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 7px;
+  border: 1px solid #ccc;
+  background-color: rgba(2018, 218, 218, 0.18);
+}
+.contact-me .contact-message form input:not([type="submit"]):focus,
+.contact-me .contact-message form textarea:focus {
+  outline: 1px solid var(--main-color);
+}
+
+.contact-me form textarea {
+  height: 130px;
+}
+.contact-me form input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--main-color);
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-me .contact-box .contact-info {
+  flex-grow: 1;
+  width: calc(100% / 3);
+  padding: 25px 5px;
+}
+.contact-me .contact-box .contact-info p {
+  margin: 3px 0px;
+  color: #666;
+  font-size: 10px;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.contact-me .contact-box .contact-info p a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.contact-me form textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* End Contact Section */
