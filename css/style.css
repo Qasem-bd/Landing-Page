@@ -805,10 +805,10 @@ body {
 .contact-me .contact-box .contact-info {
   flex-grow: 1;
   width: calc(100% / 3);
-  padding: 25px 5px;
+  padding: 25px 20px;
 }
 .contact-me .contact-box .contact-info p {
-  margin: 3px 0px;
+  margin: 5px 0px;
   color: #666;
   font-size: 10px;
   font-weight: bold;
