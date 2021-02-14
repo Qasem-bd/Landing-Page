@@ -1,5 +1,5 @@
 :root {
-  --main-color: #ff9800;
+  --main-color: #ff1744;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -41,7 +41,7 @@ body {
 .Setting-box .Setting-container {
 }
 .Setting-box .options-box {
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   text-align: center;
   margin-bottom: 0px;
 }
@@ -53,18 +53,21 @@ body {
   font-weight: bold;
   font-size: 20px;
 }
-.Setting-box .random-b {
+.Setting-box .random-b,
+.Setting-box .bullets {
   text-align: center;
-  padding: 0px 20px;
+  padding: 10px 20px;
 }
-.Setting-box .random-b h4 {
+.Setting-box .random-b h4,
+.Setting-box .bullets h4 {
   margin: 0px;
   font-size: 14px;
   font-weight: bold;
 }
-.Setting-box .random-b span {
+.Setting-box .random-b span,
+.Setting-box .bullets span {
   width: 40px;
-  background-color: #00897b;
+  background-color: var(--main-color);
   color: #ffffff;
   margin-top: 15px;
   display: inline-block;
@@ -81,8 +84,8 @@ body {
 }
 .Setting-box .random-b .no {
 }
-.Setting-box .random-b span.active,
-.Setting-box .random-b span:hover {
+.Setting-box .option-box span.active,
+.Setting-box .option-box span:hover {
   opacity: 1;
 }
 
@@ -138,6 +141,22 @@ body {
 }
 .Setting-box .options-box .colors-list li:last-child {
   background-color: #ff1744;
+}
+
+.Setting-box .reset-options {
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+.Setting-box .reset-options button {
+  background-color: #ff4444;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
 }
 
 /* End Setting Box */

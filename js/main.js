@@ -17,8 +17,9 @@ if (mainColor) {
 
 }
 
-// start Toggle class on  Icon
 
+
+// start Toggle class on  Icon
 document.querySelector(".Toggle-icon ").addEventListener("click", function () {
     
     document.querySelector(".Toggle-icon i").classList.toggle("fa-spin")
@@ -44,10 +45,7 @@ colorsLi.forEach(li => {
           localStorage.setItem('main_color',newColor )
 
           //   Activing The selected Color 
-            li.parentElement.querySelectorAll('li').forEach(element => {
-                element.classList.remove('active');
-            })
-            li.classList.add('active')
+          handleActive(event)
       })
 })
 // Switch Colors
@@ -65,7 +63,7 @@ if (isSwitchable ===null) {
 const randomizeBackground = (switchable) => {
   if (switchable) {
         backgrounInterval = setInterval(() => {
-          let randumNumber = Math.floor(Math.random() * 5);
+          let randumNumber = Math.floor(Math.random() * 4);
           landingpage.style.backgroundImage = 'url("/Images/web-design'+ randumNumber +'.jpg")'
       },5000)
    
@@ -75,8 +73,8 @@ const randomizeBackground = (switchable) => {
 // Updating Switching Start According to The local Storage
 if (isSwitchable === 'true') {
   randomizeBackground(true);
-  document.querySelector('.Setting-box .random-b .yes').classList.add('active');
-  document.querySelector('.Setting-box .random-b .no').classList.remove('active')
+  document.querySelector('.Setting-box .option-box .yes').classList.add('active');
+  document.querySelector('.Setting-box .option-box .no').classList.remove('active')
 }
 else {
   
@@ -91,10 +89,7 @@ b_control_el.forEach(controlEl => {
     controlEl.addEventListener('click', (event) => {
         
           //   Activing The selected Button
-          controlEl.parentElement.querySelectorAll('span').forEach(element => {
-              element.classList.remove('active');
-          })
-          controlEl.classList.add('active')
+          handleActive(event)
           
           const elType = controlEl.dataset.background;
           if (elType === 'yes') {
@@ -247,5 +242,57 @@ const allLinks = document.querySelectorAll('.Links a');
 scrollToSection(allBullets);
 scrollToSection(allLinks)
 
-
 // End Navigation Bullets
+
+// Function To Handle The active Status
+const handleActive = (ev) => {
+      ev.target.parentElement.querySelectorAll('.active').forEach(element => {
+          element.classList.remove('active');
+      })
+      ev.target.classList.add('active')
+}
+
+// Show and Hide The Bullets 
+const bulletControls = document.querySelectorAll(".Setting-box .bullets span");
+const navBullets = document.querySelector (".nav-bullets")
+
+const bulletsDisplay = localStorage.getItem('bullets-option');
+if (bulletsDisplay) {
+    if (bulletsDisplay === 'yes') {
+      navBullets.style.display = 'block'
+      document.querySelector('.bullets .no').classList.remove('active');
+      document.querySelector('.bullets .yes').classList.add('active');
+    }
+    else {
+      navBullets.style.display = 'none';
+      document.querySelector('.bullets .yes').classList.remove('active');
+      document.querySelector('.bullets .no').classList.add('active');
+    }
+  
+}
+bulletControls.forEach(span => {
+        span.addEventListener("click", (event) => {
+            handleActive(event);
+
+            if (span.dataset.display ==='yes') {
+              navBullets.style.display = 'block'
+              localStorage.setItem('bullets-option','yes');
+            }
+            else {
+              navBullets.style.display = 'none'
+              localStorage.setItem('bullets-option','no');
+            }
+      })
+})
+
+
+
+// Reset All Options
+const resetButton = document.querySelector('.Setting-box .reset-options button');
+      resetButton.onclick = () => {
+        // localStorage.clear();
+        localStorage.removeItem('main_color');
+        localStorage.removeItem('isSwitchable');
+        localStorage.removeItem('bullets-option');
+        window.location.reload();
+      }
