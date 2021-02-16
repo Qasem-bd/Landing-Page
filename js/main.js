@@ -19,15 +19,38 @@ if (mainColor) {
 
 
 
-// start Toggle class on  Icon
-document.querySelector(".Toggle-icon ").addEventListener("click", function () {
-    
-    document.querySelector(".Toggle-icon i").classList.toggle("fa-spin")
+// Start Toggle class on  Icon
+const toggleIcon = document.querySelector(".Toggle-icon ");
+const settingBox =  document.querySelector(".Setting-box ");
+
+toggleIcon.addEventListener("click", (event) => {
+    event.stopPropagation()
     document.querySelector(".Setting-box ").classList.toggle("Open")
+      if (settingBox.classList.contains('Open')) {
+           document.querySelector(".Toggle-icon i").classList.add("fa-spin")
+      }
+      else {
+           document.querySelector(".Toggle-icon i").classList.remove("fa-spin")
+      }
 })
 
+// Stop Propagation To Setting Box 
+settingBox.onclick = (event) => {
+  event.stopPropagation()
+}
 
-// start Toggle class on  Icon
+document.addEventListener('click', (e) => {
+    // console.log(e.target)
+    if ((e.target !== toggleIcon) && (e.target !== settingBox) ) {
+      // console.log ('not toggle icon and not setting box')
+      if (settingBox.classList.contains('Open')) {
+        settingBox.classList.remove('Open')
+        document.querySelector(".Toggle-icon i").classList.remove("fa-spin")
+      }
+    }
+})
+
+// End Toggle class on  Icon
 
 
 // Switch Colors
