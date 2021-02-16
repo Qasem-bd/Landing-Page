@@ -235,10 +235,18 @@ body {
   display: flex;
 }
 .Header-area .Logo {
-  padding: 15px;
+  padding: 15px 15px 15px 10px;
   flex-grow: 2;
   font-weight: bold;
   font-size: 24px;
+}
+.Header-area .logo-img {
+  padding-top: 18px;
+}
+.Header-area .logo-img img {
+  height: 30px;
+  width: 40px;
+  border-radius: 15px;
 }
 
 .Header-area .Links {
@@ -907,29 +915,39 @@ body {
 }
 /* End Contact Section */
 
+/* Start Footer Section */
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+/* Start Footer Section */
+
 /* Start Grid System */
 /* Small Devices => Phones */
 @media (min-width: 576px) {
-  /* .container {
+  .container {
     max-width: 540px;
-  } */
+  }
 }
 /* Medium Devices => Taplets */
 @media (min-width: 768px) {
-  /* .container {
+  .container {
     max-width: 720px;
-  } */
+  }
 }
 /* Desktops */
 @media (min-width: 992px) {
-  /* .container {
+  .container {
     max-width: 960px;
-  } */
+  }
 }
 /* Large Screens */
 @media (min-width: 1200px) {
-  /* .container {
+  .container {
     max-width: 1140px;
-  } */
+  }
 }
 /* End Grid System */
