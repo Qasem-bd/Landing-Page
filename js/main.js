@@ -53,7 +53,7 @@ colorsLi.forEach(li => {
 
 //Start Sitching The Background Randomly
 let isSwitchable = localStorage.getItem('isSwitchable');
-    console.log(isSwitchable)
+    // console.log(isSwitchable)
 let landingpage = document.querySelector(".Landing-page");
 let backgrounInterval;
 if (isSwitchable ===null) {
@@ -304,3 +304,49 @@ document.querySelector('.contact-me form  .submit').onclick = (event) => {
   event.preventDefault()
 }
 // End Contact Section
+
+// Start NavigationMenu Logic
+const linksContainer = document.querySelector('.Header-area .Links');
+const menuButton = document.querySelector('.Header-area .toggle-menu button')
+const toggleContainer = document.querySelector('.Header-area .toggle-menu')
+menuButton.onclick = (e) => {
+
+      // Stopp Prpagation
+      e.stopPropagation()
+
+      // console.log('menu Button is clicked')
+      linksContainer.classList.toggle('menu');
+      toggleContainer.classList.toggle('menu-active');
+
+
+      if(linksContainer.classList.contains('menu')){
+
+      }
+ 
+}
+// Click Anywhere Outside Toggle Button 
+document.addEventListener('click' , (e) => {
+  // console.log(e.target)
+  if((e.target !== menuButton)&&(e.target !== linksContainer)) {
+    
+    if(linksContainer.classList.contains('menu')){
+      linksContainer.classList.toggle('menu');
+      toggleContainer.classList.toggle('menu-active');
+
+    }
+  }
+})
+// Closing The Nav Menu with Scroll
+document.addEventListener('scroll',() => {
+  if(linksContainer.classList.contains('menu')){
+    linksContainer.classList.toggle('menu');
+    toggleContainer.classList.toggle('menu-active');
+
+  }
+})
+
+// Stop Propagation on The LinksContainer
+linksContainer.onclick = (e) => {
+  e.stopPropagation()
+}
+

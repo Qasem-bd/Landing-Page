@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
 }
 .container {
+  width: 100%;
   padding: 0px 15px;
   margin: auto;
 }
@@ -158,7 +159,9 @@ body {
   width: 150px;
   cursor: pointer;
 }
-
+.Setting-box .reset-options button:focus {
+  outline: none;
+}
 /* End Setting Box */
 
 /* Start Nav Bullets */
@@ -232,14 +235,15 @@ body {
   display: flex;
 }
 .Header-area .Logo {
-  padding: 15px 0px;
+  padding: 15px;
   flex-grow: 2;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .Header-area .Links {
   flex-grow: 4;
+  display: block;
 }
 
 .Header-area .Links ul {
@@ -261,6 +265,40 @@ body {
 .Header-area .Links li a:hover,
 .Header-area .Links .active {
   color: var(--main-color);
+}
+
+.Header-area .toggle-menu {
+  align-items: center;
+  padding: 20px;
+  display: none;
+  position: relative;
+}
+.Header-area .toggle-menu.menu-active::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+  top: 50px;
+  left: 35px;
+}
+
+.Header-area .toggle-menu button {
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+.Header-area .toggle-menu button:focus {
+  outline: none;
+}
+.Header-area .toggle-menu button span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-bottom: 7px;
+  background-color: #ffffff;
 }
 
 .Introduction-text {
@@ -289,6 +327,46 @@ body {
   .Header-area .Links ul li {
     padding-left: 20px;
     font-size: large;
+  }
+}
+@media (max-width: 991px) {
+  .Header-area .toggle-menu {
+    display: block;
+  }
+
+  .Header-area .Links {
+    display: none;
+  }
+  .Landing-page .menu {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 2px;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 70px;
+    /* display: none; */
+  }
+  .Header-area .Links.menu {
+    display: block;
+  }
+  .Header-area .Links.menu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .Landing-page .Links.menu ul li {
+    margin: 0px;
+    padding: 5px 0px;
+  }
+  .Landing-page .Links.menu ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    transition: 0.3s;
   }
 }
 /* End Landing Page */
@@ -729,7 +807,7 @@ body {
 
 /* Start Contact Section */
 .contact-me {
-  min-height: 300px;
+  min-height: 400px;
   background-image: url("../Images/contact.png");
   background-size: cover;
   position: relative;
@@ -801,6 +879,9 @@ body {
   border: none;
   cursor: pointer;
 }
+.contact-me form input[type="submit"]:focus {
+  outline: none;
+}
 
 .contact-me .contact-box .contact-info {
   flex-grow: 1;
@@ -810,7 +891,7 @@ body {
 .contact-me .contact-box .contact-info p {
   margin: 5px 0px;
   color: #666;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   word-break: break-all;
 }
@@ -824,5 +905,31 @@ body {
   opacity: 0;
   transition: 0.3s;
 }
-
 /* End Contact Section */
+
+/* Start Grid System */
+/* Small Devices => Phones */
+@media (min-width: 576px) {
+  /* .container {
+    max-width: 540px;
+  } */
+}
+/* Medium Devices => Taplets */
+@media (min-width: 768px) {
+  /* .container {
+    max-width: 720px;
+  } */
+}
+/* Desktops */
+@media (min-width: 992px) {
+  /* .container {
+    max-width: 960px;
+  } */
+}
+/* Large Screens */
+@media (min-width: 1200px) {
+  /* .container {
+    max-width: 1140px;
+  } */
+}
+/* End Grid System */
