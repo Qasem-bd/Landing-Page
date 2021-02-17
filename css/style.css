@@ -497,6 +497,12 @@ body {
   margin-bottom: 40px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .timeline .timeline-content .left,
+  .timeline .timeline-content .right {
+    width: 100%;
+  }
+}
 .timeline .timeline-content .left {
   float: left;
 }
@@ -519,6 +525,12 @@ body {
   background-color: #ffffff;
   position: absolute;
   top: 20px;
+}
+@media (max-width: 767px) {
+  .timeline .timeline-content .right::before,
+  .timeline .timeline-content .left::before {
+    display: none;
+  }
 }
 
 .timeline .timeline-content .content {
@@ -557,6 +569,12 @@ body {
   position: absolute;
   top: 20px;
   left: -20px;
+}
+@media (max-width: 767px) {
+  .timeline .timeline-content .right .content::before,
+  .timeline .timeline-content .left .content::before {
+    display: none;
+  }
 }
 /* Etart Timeline */
 
@@ -709,6 +727,17 @@ body {
   text-align: center;
   margin-bottom: 30px;
 }
+@media (max-width: 991px) {
+  .features .feat-box {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 575px) {
+  .features .feat-box {
+    width: 100%;
+  }
+}
+
 .features .feat-box img {
   width: 96px;
 }
@@ -923,6 +952,12 @@ body {
 
 /* Start Grid System */
 /* Small Devices => Phones */
+@media (max-width: 575) {
+  .container {
+    width: 100%;
+    padding: 0px 10px;
+  }
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
