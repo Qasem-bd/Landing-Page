@@ -792,7 +792,7 @@ body {
   color: #ffffff;
   margin-top: 0px;
   padding-top: 20px;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
@@ -807,6 +807,13 @@ body {
   z-index: 2;
   float: left;
   padding: 20px 10px;
+}
+@media (max-width: 767px) {
+  .testimonials .ts-box {
+    width: 100%;
+    float: none;
+    margin-bottom: 10px;
+  }
 }
 .testimonials .ts-box:not(:last-of-type) {
   margin-right: 1%;
@@ -865,13 +872,14 @@ body {
   text-align: center;
 }
 .contact-me .contact-box {
-  display: flex;
+  display: block;
   padding-top: 25px;
 }
 
 .contact-me .contact-box .contact-message {
   flex-grow: 2;
-  width: calc(100% / 3 * 2);
+  width: 80%;
+  margin: auto;
 }
 .contact-me .contact-message form {
   overflow: hidden;
@@ -917,8 +925,8 @@ body {
 }
 
 .contact-me .contact-box .contact-info {
-  flex-grow: 1;
-  width: calc(100% / 3);
+  width: 80%;
+  margin: auto;
   padding: 25px 20px;
 }
 .contact-me .contact-box .contact-info p {
@@ -952,12 +960,12 @@ body {
 
 /* Start Grid System */
 /* Small Devices => Phones */
-@media (max-width: 575) {
+/* @media (max-width: 575) {
   .container {
     width: 100%;
     padding: 0px 10px;
   }
-}
+} */
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
